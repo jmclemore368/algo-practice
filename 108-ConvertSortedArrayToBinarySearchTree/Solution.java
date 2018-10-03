@@ -16,7 +16,6 @@ class Solution {
             return new TreeNode(nums[0]);
 
         int mid = nums.length / 2;
-
         TreeNode head = new TreeNode(nums[mid]);
 
         // if nums.length == 2, returns arr of element at nums[0]
@@ -25,6 +24,7 @@ class Solution {
         // if nums.length == 2, mid is rightmost element
         head.right = (mid == nums.length - 1) ? null : sortedArrayToBST(Arrays.copyOfRange(nums, mid + 1, nums.length));
 
+        // tree will be balanced and left-aligned
         return head;
     }
 }
