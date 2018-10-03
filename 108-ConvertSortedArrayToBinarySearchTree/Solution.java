@@ -17,10 +17,12 @@ class Solution {
 
         int mid = nums.length / 2;
 
-        // Mid will either be the middle element in an odd length array
-        // or the rightmost element. So we need to check. Left will always be ok in range.
         TreeNode head = new TreeNode(nums[mid]);
+
+        // if nums.length == 2, returns arr of element at nums[0]
         head.left = sortedArrayToBST(Arrays.copyOfRange(nums, 0, mid));
+
+        // if nums.length == 2, mid is rightmost element
         head.right = (mid == nums.length - 1) ? null : sortedArrayToBST(Arrays.copyOfRange(nums, mid + 1, nums.length));
 
         return head;
