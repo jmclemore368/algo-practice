@@ -14,7 +14,8 @@ class Solution {
             stack.addFirst(curr);
         }
 
-        // Edge case: if K > 0 the nwe did not remove any as they were all at the end.
+        // Edge case: if K > 0 then we did not remove any as
+        // the largest were all at the end.
         // Ex] 1111, 112
         while (k-- > 0)
             stack.removeFirst();
