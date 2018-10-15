@@ -6,9 +6,9 @@ class Solution {
         while (n > 0) {
             // Subtract 1 so A maps to 0 in Mod and Z maps to 25
             int lastNum = (n - 1) % 26;
-            char lastAscii = (char) (65 + last);
+            char lastAscii = (char) (65 + lastNum);
             sb.append(lastAscii);
-            n = (n - last) / 26;
+            n = (n - lastNum) / 26;
         }
         return sb.reverse().toString();
     }
