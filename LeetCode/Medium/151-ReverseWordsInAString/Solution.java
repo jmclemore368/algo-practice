@@ -1,14 +1,10 @@
 public class Solution {
     public String reverseWords(String s) {
-
         StringBuilder sb = new StringBuilder(s.trim());
-        // Reverse the entire string
         sb.reverse();
-
         // Order of words is correct
         // Individual words need reversing now
         // Ex] eulb si yks eht
-        System.out.println("Word : " + sb.toString());
         int start = 0;
         int end;
         while ((end = sb.indexOf(" ", start)) != -1) {
@@ -29,7 +25,7 @@ public class Solution {
         // While loop breaks before last word
         end = sb.length();
         String lastWord = new StringBuilder(sb.substring(start, end)).reverse().toString();
-        sb.replace(start, sb.length(), lastWord);
+        sb.replace(start, end, lastWord);
 
         return sb.toString();
     }
