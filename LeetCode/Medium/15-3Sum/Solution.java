@@ -2,9 +2,11 @@ class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new LinkedList<>();
 
-        // Sort so we can avoid duplicates when we run 2-sum
+        // Sort the input array so we can avoid duplicate answers.
         Arrays.sort(nums);
 
+        // For each element i, try to find all distinct matching 2-sum complement pairs
+        // in the remaining subarray. To do this, skip over duplicate elements.
         for (int i = 0; i + 2 < nums.length; i++) {
             if (i > 0 && nums[i - 1] == nums[i]) // skip duplicate i
                 continue;
@@ -27,7 +29,6 @@ class Solution {
                 }
             }
         }
-
         return res;
     }
 }
