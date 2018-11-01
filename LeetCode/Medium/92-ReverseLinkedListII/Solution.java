@@ -13,10 +13,10 @@ class Solution {
             sh
             dh -> 1 -> 2 -> 3 -> 4 -> 5 -> x
         */
-
         ListNode dummyHead = new ListNode(Integer.MIN_VALUE);
         dummyHead.next = head;
         ListNode subListHead = dummyHead;
+
         /*
             Want to start at the m-th node
                   sh   P
